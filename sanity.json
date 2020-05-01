@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "project": {
+    "name": "De Blanco"
+  },
+  "api": {
+    "projectId": "u90cs3hp",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/color-input",
+    "asset-source-unsplash",
+    "media",
+    "asset-source-giphy",
+    "color-list"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./parts/assetSources.js"
+    }
+  ]
+}
